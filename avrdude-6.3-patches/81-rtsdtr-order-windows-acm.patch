@@ -1,0 +1,16 @@
+--- ser_win32.c.orig	2019-01-18 23:15:50.355141672 +0100
++++ ser_win32.c	2019-01-18 23:16:00.271207164 +0100
+@@ -328,11 +328,11 @@
+ 		HANDLE hComPort=(HANDLE)fd->pfd;
+ 
+ 		if (is_on) {
+-			EscapeCommFunction(hComPort, SETDTR);
+ 			EscapeCommFunction(hComPort, SETRTS);
++			EscapeCommFunction(hComPort, SETDTR);
+ 		} else {
+-			EscapeCommFunction(hComPort, CLRDTR);
+ 			EscapeCommFunction(hComPort, CLRRTS);
++			EscapeCommFunction(hComPort, CLRDTR);
+ 		}
+ 		return 0;
+ 	}
